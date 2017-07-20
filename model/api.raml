@@ -1,0 +1,24 @@
+#%RAML 0.8
+title: coapled
+baseUri: coap://api.sylft.io/
+version: 0.1
+schemas:
+  - counter: counter-schema.json
+/digit:
+  get:
+    description: Return device configuration
+    responses:
+      205:
+        body:
+          application/x-msgpack:
+            schema: counter
+  post:
+    description: Update device configuration
+    body:
+      application/x-msgpack:
+        schema: counter
+    responses:
+      204:
+        description: Changed device configuration
+      406:
+        description: Configuration request not acceptable

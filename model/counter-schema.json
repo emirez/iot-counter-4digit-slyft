@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "counter",
+    "title": "Increase or decrease the counter",
+    "description": "Specify inc-dec",
+    "type": "object",
+    "properties" : {
+    "command" : {
+          "type": "boolean",
+          "description": "true->inc"
+        }
+    },
+    "additionalProperties": false,
+    "required": ["command"],
+    "minProperties": 1
+}
